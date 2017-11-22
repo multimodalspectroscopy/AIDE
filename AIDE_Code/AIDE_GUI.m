@@ -319,7 +319,7 @@ if ~isempty(handles.p_thresh) && ~isempty(handles.fs)
         
         [Results, Act_points, Act_points_thresh, boxcar, Convolution, Channels2Include]=AIDE(handles.AllSignals,0.05,handles.p_thresh,handles.fs,handles.Channels2Exclude,handles.FDR_corr,[],[],handles.MaxBoxDur);
         
-        [Activation_Points]=reshape_results(Act_points_thresh, Channels2Include);
+        [Activation_Points, Results]=reshape_results(Act_points_thresh, Channels2Include, Results);
         
         axes(handles.axes1);
         
